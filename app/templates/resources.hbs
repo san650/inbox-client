@@ -1,7 +1,19 @@
 {{outlet}}
 
-<ul>
-  {{#each resources as |resource|}}
-  <li>{{link-to resource.uri 'resource.show' resource.id}}</li>
-  {{/each}}
-</ul>
+<article class="book-group">
+  <h3>Resources
+    <span>({{resources.length}})</span>
+  </h3>
+  <div class="content">
+    <ol>
+      {{#each resources as |resource|}}
+      <li>
+        {{link-to resource.uri 'resource.show' resource.id}}
+        {{#each resource.tags as |tag|}}
+          <a class="tags" {{action 'filterBy' tag}}>{{tag}}</a>
+        {{/each}}
+      </li>
+      {{/each}}
+    </ol>
+  </div>
+</article>

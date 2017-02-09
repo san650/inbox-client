@@ -1,7 +1,7 @@
 import ApplicationSerializer from './application';
 
 export default ApplicationSerializer.extend({
-  serialize(snapshot, options) {
+  serialize(snapshot) {
     var attributes = snapshot.attributes();
     var data = {
       uri: attributes.uri,

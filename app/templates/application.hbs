@@ -1,1 +1,27 @@
-{{outlet}}
+<header class="header">
+  <h1>Inbox</h1>
+</header>
+<div class="container">
+  <nav class="nav-bar">
+    <ul>
+      <li>
+        {{link-to 'Dashboard' 'index'}}
+      </li>
+      <li>
+        {{link-to 'All resources' 'resources'}}
+      </li>
+      <li>
+        {{link-to 'Add' 'resource.new'}}
+      </li>
+      <li>
+        <a href>Search</a>
+      </li>
+    </ul>
+    {{outlet "sidebar"}}
+  </nav>
+  <div class="main">
+    <div class="article">
+      {{outlet}}
+    </div>
+  </div>
+</div>

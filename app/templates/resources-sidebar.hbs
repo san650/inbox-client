@@ -1,0 +1,8 @@
+<p>filter by <a class="tags" {{action "clearFilters"}}>(clear)</a></p>
+<ul>
+  {{#each tags as |tag|}}
+  <li>
+    <a {{action "filterBy" tag.name}}>{{tag.name}}</a>
+  </li>
+  {{/each}}
+</ul>
