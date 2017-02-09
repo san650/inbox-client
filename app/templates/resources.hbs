@@ -2,6 +2,6 @@
 
 <ul>
   {{#each resources as |resource|}}
-    <li>{{resource.uri}}</li>
+  <li>{{link-to resource.uri 'resource.show' resource.id}}</li>
   {{/each}}
 </ul>

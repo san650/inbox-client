@@ -16,10 +16,7 @@ export default Ember.Controller.extend({
 
       model.save().then(() => {
         this.toggleProperty('saving');
-        this.setProperties({
-          uri: '',
-          tags: ''
-        });
+        this.transitionToRoute('resources');
       });
 
       return false;

@@ -7,8 +7,10 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('resources', function() {
+  this.route('resources');
+  this.route('resource', function() {
     this.route('new');
+    this.route('show', { path: ':id' });
   });
 });
 

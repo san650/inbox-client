@@ -12,13 +12,8 @@ export default DS.RESTAdapter.extend({
 
     if (options.data && type !== 'GET') {
       hash.contentType = 'application/x-www-form-urlencoded; charset=UTF-8';
-      data = JSON.parse(options.data).resource;
-      hash.data = $.param({
-        resource: {
-          uri: data.uri
-        },
-        tags: data.tags
-      });
+      data = JSON.parse(options.data);
+      hash.data = $.param(data);
     }
 
     return hash;
