@@ -1,7 +1,15 @@
-<form onsubmit={{action "onSubmit" uri tags}}>
+<form onsubmit={{action "onSubmit" uri newTags tags}}>
   {{input type="url" value=uri placeholder="URL e.g. http://www.example.com/" required=true}}
   <br>
-  {{input value=tags placeholder="Tags... e.g. foo bar baz"}}
+  {{#each tags as |tag|}}
+    <label>
+      {{input type="checkbox" checked=tag.isSelected name="tags"}}
+      {{tag.name}}
+    </label>
+  {{/each}}
+  <br>
+  {{input value=newTags placeholder="Other tags..."}}
+  <br>
 
   {{#if saving}}
     <button type="button" disabled>Saving...</button>

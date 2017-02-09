@@ -5,16 +5,17 @@ export default Ember.Controller.extend({
   tags: null,
 
   actions: {
-    onSubmit(uri, tagsString) {
+    onSubmit(uri, newTags, existingTags) {
       this.toggleProperty('saving');
-      var tags = tagsString.split(' ').map((tag) => tag.trim());
+      var tags = newTags.split(' ').map((tag) => tag.trim());
+      tags = tags.concat(existingTags.filterBy('isSelected').mapBy('name'));
       uri = uri.trim();
 
-      var model = this.get('model');
-      model.set('uri', uri);
-      model.set('tags', tags);
+      var resource = this.get('resource');
+      resource.set('uri', uri);
+      resource.set('tags', tags);
 
-      model.save().then(() => {
+      resource.save().then(() => {
         this.toggleProperty('saving');
         this.transitionToRoute('resources');
       });
