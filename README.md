@@ -11,6 +11,6 @@ To deploy in [Heroku](https://github.com/heroku/heroku-buildpack-emberjs)
 ```
 $ heroku create
 $ heroku buildpacks:set https://codon-buildpacks.s3.amazonaws.com/buildpacks/heroku/emberjs.tgz
-$ heroku config:set API_HOST=https://my-server.herokuapp.com/
+$ heroku config:set API_HOST=https://my-server.herokuapp.com
 $ git push heroku master
 ```
