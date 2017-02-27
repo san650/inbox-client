@@ -1,7 +1,5 @@
 import Ember from 'ember';
 
-const { computed } = Ember;
-
 class Filters {
   constructor(initial) {
     if (initial && initial.length > 0) {

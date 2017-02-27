@@ -1,52 +1,16 @@
 # inbox
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+Client app for `inbox` system. See [inbox](https://github.com/san650/inbox-server).
 
-## Prerequisites
+## Deployment
 
-You will need the following things properly installed on your computer.
+`API_HOST` URL to the API server.
 
-* [Git](https://git-scm.com/)
-* [Node.js](https://nodejs.org/) (with NPM)
-* [Bower](https://bower.io/)
-* [Ember CLI](https://ember-cli.com/)
-* [PhantomJS](http://phantomjs.org/)
+To deploy in [Heroku](https://github.com/heroku/heroku-buildpack-emberjs)
 
-## Installation
-
-* `git clone <repository-url>` this repository
-* `cd inbox`
-* `npm install`
-* `bower install`
-
-## Running / Development
-
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
-
-### Code Generators
-
-Make use of the many generators for code, try `ember help generate` for more details
-
-### Running Tests
-
-* `ember test`
-* `ember test --server`
-
-### Building
-
-* `ember build` (development)
-* `ember build --environment production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
-
-## Further Reading / Useful Links
-
-* [ember.js](http://emberjs.com/)
-* [ember-cli](https://ember-cli.com/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+```
+$ heroku create
+$ heroku buildpacks:set https://codon-buildpacks.s3.amazonaws.com/buildpacks/heroku/emberjs.tgz
+$ heroku config:set API_HOST=https://my-server.herokuapp.com/
+$ git push heroku master
+```
