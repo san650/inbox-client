@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 const { RSVP } = Ember;
 
-export default Ember.Object.extend({
+export default Ember.Service.extend({
   isAuthenticated: false,
 
   authenticate() {
