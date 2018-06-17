@@ -11,11 +11,11 @@ export default Ember.Object.extend({
         var username = window.prompt('User name');
         var password = window.prompt('Password');
 
-        Ember.$.ajaxPrefilter((options, originalOptions, xhr) => {
+        Ember.$.ajaxPrefilter((options) => {
           options.xhrFields = { withCredentials: true };
           options.username = username;
           options.password = password;
-          return true
+          return true;
         });
 
         this.setProperties({
