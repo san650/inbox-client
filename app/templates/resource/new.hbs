@@ -1,4 +1,4 @@
-<form onsubmit={{action "onSubmit" uri newTags tags}}>
+<form {{action "onSubmit" uri newTags tags on="submit"}}>
   <fieldset>
     {{input type="url" value=uri placeholder="URL e.g. http://www.example.com/" required=true}}
   </fieldset>
