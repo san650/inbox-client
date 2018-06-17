@@ -7,7 +7,7 @@ export default Ember.Controller.extend({
   actions: {
     onSubmit(uri, newTags, existingTags) {
       this.toggleProperty('saving');
-      var tags = newTags.split(' ').map((tag) => tag.trim());
+      var tags = (newTags || '').split(' ').map((tag) => tag.trim());
       tags = tags.concat(existingTags.filterBy('isSelected').mapBy('name'));
       uri = uri.trim();
 
